@@ -7,7 +7,13 @@
         <h1>Here are your contacts:</h1>
         {% if contacts is not empty %}
             {% for contact in contacts %}
-                <p>{{contact.get('name')}}, {{contact.get('address')}}, {{contact.get('phone')}}</p>
+            <ul>
+              <li>{{contact.get('name')}}</li>
+              <ul>
+                <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
+              </ul>
+
+            </ul>
             {% endfor %}
         {% endif %}
         <form action="/add" method="post">
