@@ -20,12 +20,23 @@
     });
 
     $app->post("/submit", function() use ($app) {
-        $new_contact = new Contact(ucfirst(strtolower($_POST['name'])), ucfirst(strtolower($_POST['address'])), $_POST['phone']);
+        $new_contact = new Contact(ucfirst(strtolower($_POST['name'])), ucfirst(strtolower($_POST['title'])), $_POST['year']);
         $new_contact->save();
         return $app['twig']->render('index.html.twig', array('contacts' => Contact::getAll()));
     });
 
+    $app->post("/search_name", function() use ($app) {
+        $name_name = ucfirst(strtolower($_POST['contact_name']));
+        return $app['twig']->render('list_by_name.html.twig', array('contacts' => Contact::getAll(), 'contact_name'=>$contact_name));
+    });
 
+    $app->post("/go_home", function() use ($app) {
+        return $app['twig']->render('index.html.twig', array('contacts' => Contact::getAll()));
+    });
+
+    $app->post("/delete", function() use ($app) {
+        return $app['twig']->render('index.html.twig', array('contacts' => Contact::delete()));
+    });
 
     return $app;
 ?>
