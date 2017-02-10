@@ -2,11 +2,6 @@
   padding-top: 20px;
 }
 
-#friends {
-  color: #F3C677;
-  font-family: 'Dancing Script', cursive
-}
-
 #delete {
   color: #F9564F;
   text-transform: uppercase;
@@ -41,6 +36,11 @@
 
 #add-page-btn {
   background-color: #F3C677;
+}
+
+.friends {
+    color: #F3C677;
+    font-family: 'Dancing Script', cursive;
 }
 
 .contact-begin {

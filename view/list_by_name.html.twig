@@ -8,19 +8,28 @@
         <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat" rel="stylesheet">
     </head>
     <body>
-      <h1>Contacts beginning with {{contact_name}}</h1>
-        {% for contact in contacts %}
-              {% if contact_name in contact.get('name') %}
-              <ul>
-                  <li class="name-of-contact">{{contact.get('name')}}</li>
-                      <ul>
-                        <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
-                      </ul>
-              </ul>
-              {% endif %}
-        {% endfor %}
-        <form action="go_home" method="post">
-            <button class="btn" type="submit" name="button">Go Home</button>
-        </form>
+        <div class="container">
+            {% for contact in contacts %}
+            {% if contact_name in contact.get('name') %}
+            <div class="jumbotron">
+                <h1>Contacts beginning with <span class="friends">"{{contact_name}}"</span>.</h1>
+            </div>
+            <ul>
+                <li class="name-of-contact">{{contact.get('name')}}</li>
+                <ul>
+                    <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
+                </ul>
+            </ul>
+            {% endif %}
+            {% endfor %}
+            {% if contact_name not in contact.get('name') %}
+            <div class="jumbotron">
+                <h1>You have no friends beginning with <span class="friends">"{{contact_name}}"</span>, maybe you should try and make new friends...</h1>
+                {% endif %}
+            </div>
+            <form action="go_home" method="post">
+                <button id="go-home-btn" class="btn" type="submit" name="button">Go Home</button>
+            </form>
+        </div>
     </body>
 </html>
