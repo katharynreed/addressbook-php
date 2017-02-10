@@ -4,9 +4,6 @@ Address Book, Feb 10th, 2017
 
 Author: Katharyn Reed
 
-##To View Sample
-[Gh-pages](https://katharynreed.github.io/addressbook-php)
-
 ##Description:
 
 This program built to practice basic PhP. The web page takes user data and stores it within the local server. This web page serves as an address book.
