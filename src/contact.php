@@ -36,6 +36,14 @@
             array_push($_SESSION['contact_array'], $this);
         }
 
+        function deleteOne(array $array, $value = TRUE)
+        {
+            if(($key = array_search($value, $array)) !== FALSE) {
+              unset($array[$key]);
+            }
+            return $array;
+        }
+
         static function getAll()
         {
             return $_SESSION['contact_array'];

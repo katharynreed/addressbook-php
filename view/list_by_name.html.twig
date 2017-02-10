@@ -3,6 +3,9 @@
     <head>
         <meta charset="utf-8">
         <title>Contact Search</title>
+        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat" rel="stylesheet">
     </head>
     <body>
       <h1>Contacts beginning with {{contact_name}}</h1>
@@ -17,7 +20,7 @@
               {% endif %}
         {% endfor %}
         <form action="go_home" method="post">
-            <button type="submit" name="button">Go Home</button>
+            <button class="btn" type="submit" name="button">Go Home</button>
         </form>
     </body>
 </html>

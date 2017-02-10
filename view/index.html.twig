@@ -2,30 +2,44 @@
 <html>
     <head>
       <title>Address Book</title>
+      <link rel="stylesheet" href="/bootstrap.min.css">
+      <link rel="stylesheet" href="/styles.css">
+      <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat" rel="stylesheet">
     </head>
     <body>
-        <h1>Here are your contacts:</h1>
-        {% if contacts is not empty %}
-            {% for contact in contacts %}
-            <ul>
-                <li>{{contact.get('name')}}</li>
-                    <ul>
-                      <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
-                    </ul>
-            </ul>
-            {% endfor %}
-        {% endif %}
-        <form action="/create_contact" method="post">
-            <button type="submit" name="button">Add Contact</button>
-        </form>
-        <br>
-        <br>
-        <form action="/search_contact" method="post">
-            <input type="text" name="contact_name" placeholder="Search by name">
-            <button type="submit" name="button">Search Name</button>
-        </form>
-        <form action="/delete_contacts" method="post">
-            <button type="submit" name="button">Delete All</button>
-        </form>
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Prove you have <span id="friends">"friends"</span> by entering them into a list.</h1>
+                <h5>Use the search bar below to search through your "friends", or add a "friend" by using the add contact button.</h5>
+                <div id="searchbar">
+                  <form action="/search_contact" method="post">
+                      <div class="input-group">
+                          <input class="form-control" type="text" name="contact_name" placeholder="Search by name...">
+                          <span class="input-group-btn">
+                              <button class="btn btn-secondary" type="submit">Go!</button>
+                          </span>
+                      </div>
+                  </form>
+                </div>
+            </div>
+            {% if contacts is not empty %}
+                {% for contact in contacts %}
+                <ul>
+                    <li>{{contact.get('name')}}</li>
+                <ul>
+                    <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
+                </ul>
+              </ul>
+                {% endfor %}
+            {% endif %}
+            <div id="add">
+                <form action="/create_contact" method="post">
+                  <button id="add-btn" class="btn btn-block" type="submit" name="button">Add Contact</button>
+                </form>
+            </div>
+            <form action="/delete_contacts" method="post">
+                <button id="delete-btn" class="btn btn-block" type="submit" name="button">Delete All</button>
+            </form>
+        </div>
     </body>
 </html>

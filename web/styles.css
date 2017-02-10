@@ -1,0 +1,63 @@
+#searchbar {
+  padding-top: 20px;
+}
+
+#friends {
+  color: #F3C677;
+  font-family: 'Dancing Script', cursive
+}
+
+#delete {
+  color: #F9564F;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 25px;
+}
+
+#delete-btn {
+  background-color: #F9564F;
+}
+
+#delete-page {
+  text-align: center;
+  padding-top: 50px;
+}
+
+#done-btn {
+  background-color: #F9564F;
+}
+
+#add {
+  padding-bottom: 10px;
+}
+
+#add-btn {
+  background-color: #F3C677;
+}
+
+#add-page-form {
+  padding-top: 10px;
+}
+
+#add-page-btn {
+  background-color: #F3C677;
+}
+
+.form-control {
+  width: 40%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+
+
+
+
+/*font-family: 'Dancing Script', cursive;
+font-family: 'Montserrat', sans-serif;*/

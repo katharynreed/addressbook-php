@@ -3,20 +3,27 @@
     <head>
         <meta charset="utf-8">
         <title>Add a contact to your collection.</title>
+        <link rel="stylesheet" href="/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Montserrat" rel="stylesheet">
     </head>
     <body>
-        <h1>Add a contact to your collection.</h1>
-        <form id="add-a-contact" action="/submit" method="post">
-            <label for="name">Name:</label>
-            <input type="text" name="name">
+        <div class="container">
+            <h1>Add a contact to your collection.</h1>
+            <form id="add-a-contact" action="/submit" method="post">
+              <label for="name">Name:</label>
+              <input class="form-control" type="text" name="name">
 
-            <label for="address">Address:</label>
-            <input type="text" name="address">
+              <label for="address">Address:</label>
+              <input class="form-control" type="text" name="address">
 
-            <label for="phone">Phone:</label>
-            <input type="text" name="phone">
+              <label for="phone">Phone:</label>
+              <input class="form-control" type="tel" name="phone" placeholder="+1 (___)___-____">
 
-            <button type="submit" name="add">Submit</button>
-        </form>
+              <div id="add-page-form">
+                  <button id="add-page-btn" class="btn" type="submit" name="add">Add new friends!</button>
+              </div>
+            </form>
+        </div>
     </body>
 </html>
