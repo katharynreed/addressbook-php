@@ -4,6 +4,23 @@
 
     </head>
     <body>
-      
+        <h1>Here are your contacts:</h1>
+        {% if contacts is not empty %}
+            {% for contact in contacts %}
+                <p>{{contact.get('name')}}, {{contact.get('address')}}, {{contact.get('phone')}}</p>
+            {% endfor %}
+        {% endif %}
+        <form action="/add" method="post">
+            <button type="submit" name="button">Add Contact</button>
+        </form>
+        <br>
+        <br>
+        <form action="/search_contact" method="post">
+            <input type="text" name="contact_name" placeholder="Search by name">
+            <button type="submit" name="button">Search Name</button>
+        </form>
+        <form action="/delete" method="post">
+            <button type="submit" name="button">Delete All</button>
+        </form>
     </body>
 </html>
