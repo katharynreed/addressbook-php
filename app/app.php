@@ -1,4 +1,5 @@
 <?php
+
     date_default_timezone_set('America/Los_Angeles');
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/contact.php";
@@ -39,14 +40,14 @@
     });
 
     $app->post('/delete-one', function() use ($app){
-        deleteOne(($_POST['delete']))
+        $_SESSION['list_of_contacts'] = array_values($_SESSION['list_of_contacts']);
+        unset($_SESSION['list_of_contacts'][$_POST['name']]);
+        return $app['twig']->render('index.html.twig', array('contacts' => Contact::getAll()));
     });
 
     $app->post('/delete_confirmed', function() use ($app) {
         return $app['twig']->render('index.html.twig', array('contacts' => Contact::delete()));
     });
-
-
 
     return $app;
 ?>
