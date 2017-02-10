@@ -15,7 +15,7 @@
             </ul>
             {% endfor %}
         {% endif %}
-        <form action="/add" method="post">
+        <form action="/create_contact" method="post">
             <button type="submit" name="button">Add Contact</button>
         </form>
         <br>
@@ -24,7 +24,7 @@
             <input type="text" name="contact_name" placeholder="Search by name">
             <button type="submit" name="button">Search Name</button>
         </form>
-        <form action="/delete" method="post">
+        <form action="/delete_contacts" method="post">
             <button type="submit" name="button">Delete All</button>
         </form>
     </body>

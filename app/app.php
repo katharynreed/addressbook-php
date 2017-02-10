@@ -15,7 +15,7 @@
         return $app['twig']->render('index.html.twig', array('contacts' => Contact::getAll()));
     });
 
-    $app->post("/add", function() use ($app) {
+    $app->post("/create_contact", function() use ($app) {
         return $app['twig']->render('add.html.twig', array('contacts' => Contact::getAll()));
     });
 
@@ -34,7 +34,8 @@
         return $app['twig']->render('index.html.twig', array('contacts' => Contact::getAll()));
     });
 
-    $app->post("/delete", function() use ($app) {
+    $app->post("/delete_contacts", function() use ($app) {
+        echo "Contacts deleted!";
         return $app['twig']->render('index.html.twig', array('contacts' => Contact::delete()));
     });
 
