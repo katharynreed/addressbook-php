@@ -24,14 +24,12 @@
         </div>
         {% if contacts is not empty %}
             {% for contact in contacts %}
-                <div class="col-md-3">
+                <ul>
+                    <li class="contact-begin">{{contact.get('name')}}</li>
                     <ul>
-                        <li>{{contact.get('name')}}</li>
-                        <ul>
-                            <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
-                        </ul>
+                        <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
                     </ul>
-                </div>
+                </ul>
             {% endfor %}
         {% endif %}
         <div id="add">

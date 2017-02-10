@@ -43,6 +43,10 @@
   background-color: #F3C677;
 }
 
+.contact-begin {
+    font-size: 20px;
+}
+
 .form-control {
   width: 40%;
 }
