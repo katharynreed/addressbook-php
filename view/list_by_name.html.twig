@@ -12,7 +12,7 @@
         {% for contact in contacts %}
               {% if contact_name in contact.get('name') %}
               <ul>
-                  <li>{{contact.get('name')}}</li>
+                  <li class="name-of-contact">{{contact.get('name')}}</li>
                       <ul>
                         <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
                       </ul>

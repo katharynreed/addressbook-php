@@ -39,12 +39,6 @@
         return $app['twig']->render('delete_contacts.html.twig');
     });
 
-    $app->post('/delete-one', function() use ($app){
-        $_SESSION['list_of_contacts'] = array_values($_SESSION['list_of_contacts']);
-        unset($_SESSION['list_of_contacts'][$_POST['name']]);
-        return $app['twig']->render('index.html.twig', array('contacts' => Contact::getAll()));
-    });
-
     $app->post('/delete_confirmed', function() use ($app) {
         return $app['twig']->render('index.html.twig', array('contacts' => Contact::delete()));
     });
