@@ -3,8 +3,8 @@
     require_once __DIR__."/../vendor/autoload.php";
     require_once __DIR__."/../src/contact.php";
     session_start();
-    if (empty($_SESSION['contact_array'])) {
-        $_SESSION['contact_array'] = array();
+    if (empty($_SESSION['list_of_contacts'])) {
+        $_SESSION['list_of_contacts'] = array();
     }
     $app = new Silex\Application();
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
@@ -20,13 +20,13 @@
     });
 
     $app->post("/submit", function() use ($app) {
-        $new_contact = new Contact(ucfirst(strtolower($_POST['name'])), ucfirst(strtolower($_POST['address'])), $_POST['phone']);
+        $new_contact = new Contact(ucwords(strtolower($_POST['name'])), ucwords(strtolower($_POST['address'])), $_POST['phone']);
         $new_contact->save();
         return $app['twig']->render('index.html.twig', array('contacts' => Contact::getAll()));
     });
 
-    $app->post("/search_name", function() use ($app) {
-        $name_name = ucfirst(strtolower($_POST['contact_name']));
+    $app->post("/search_contact", function() use ($app) {
+        $contact_name = ucwords(strtolower($_POST['contact_name']));
         return $app['twig']->render('list_by_name.html.twig', array('contacts' => Contact::getAll(), 'contact_name'=>$contact_name));
     });
 

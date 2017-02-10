@@ -1,9 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <meta charset="utf-8">
+        <title>Contact Search</title>
     </head>
     <body>
-        
+      <h1>Contacts beginning with {{contact_name}}</h1>
+        {% for contact in contacts %}
+              {% if contact_name in contact.get('name') %}
+              <ul>
+                  <li>{{contact.get('name')}}</li>
+                      <ul>
+                        <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
+                      </ul>
+              </ul>
+              {% endif %}
+        {% endfor %}
+        <form action="go_home" method="post">
+            <button type="submit" name="button">Go Home</button>
+        </form>
     </body>
 </html>

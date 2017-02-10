@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+      <title>Address Book</title>
     </head>
     <body>
         <h1>Here are your contacts:</h1>
         {% if contacts is not empty %}
             {% for contact in contacts %}
             <ul>
-              <li>{{contact.get('name')}}</li>
-              <ul>
-                <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
-              </ul>
-
+                <li>{{contact.get('name')}}</li>
+                    <ul>
+                      <li>{{contact.get('address')}}</li> <li>{{contact.get('phone')}}</li>
+                    </ul>
             </ul>
             {% endfor %}
         {% endif %}
